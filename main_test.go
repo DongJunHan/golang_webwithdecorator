@@ -40,5 +40,10 @@ func TestDecoHandler(t *testing.T){
 	read := bufio.NewReader(buffer)
 	line,_ , err1 := read.ReadLine()
 	assert.NoError(err1)
-	assert.Contains(string(line),"LOGGER1] Started")
+	assert.Contains(string(line),"[LOGGER1] Started")
+	
+
+	line,_ , err1 = read.ReadLine()
+	assert.NoError(err1)
+	assert.Contains(string(line),"[LOGGER1] Completed")
 }

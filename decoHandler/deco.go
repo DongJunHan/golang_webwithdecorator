@@ -4,7 +4,7 @@ import(
 	"net/http"
 )
 
-type DecoratorFunc func(w http.ResponseWriter, r *http.Request,h http.Handler)
+type DecoratorFunc func(http.ResponseWriter, *http.Request,http.Handler)
 
 type DecoHandler struct{
 	fn DecoratorFunc
